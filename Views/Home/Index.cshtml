@@ -1,0 +1,32 @@
+﻿@model bool
+<h1>Dojodachi</h1>
+<p>Happiness: @TempData["Happiness"]     Fullness: @TempData["Fullness"]     Energy: @TempData["Energy"]   Meal: @TempData["Meal"]</p>
+
+<p>@TempData["Message"]</p>
+
+@{
+
+    if (@Model){
+        <form action = "/reset" method = "post">
+            <button>Restart</button>
+        </form>
+
+    }
+    else{
+        <form action = "/feed" method = "post">
+            <button>Feed</button>
+        </form>
+
+        <form action = "/play" method = "post">
+            <button>Play</button>
+        </form>
+
+        <form action = "/work" method = "post">
+            <button>Work</button>
+        </form>
+
+        <form action = "/sleep" method = "post">
+            <button>Sleep</button>
+        </form>
+    }
+}
